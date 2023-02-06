@@ -1,5 +1,5 @@
 {
-  "name": "CheemsBot-MD",
+  "name": "TharuBot-MD",
   "version": "6.0.0",
   "description": "Automated whatsapp md bot created using nodejs and baileys lib",
   "type": "commonjs",
@@ -81,10 +81,10 @@
     "src": "src"
   },
   "devDependencies": {},
-  "repository": "git+https://github.com/DGXeon/CheemsBot-MD6.git",
+  "repository": "git+https://github.com/RiviMAX/Tharu-Bot-MD2.git",
   "bugs": {
-    "url": "https://github.com/DGXeon/CheemsBot-MD6/issues"
+    "url": "https://github.com/RiviMAX/Tharu-Bot-MD2/issues"
   },
-  "homepage": "https://github.com/DGXeon/CheemsBot-MD6/#readme",
+  "homepage": "https://github.com/RiviMAX/Tharu-Bot-MD2/#readme",
   "main": "index.js"
 }
