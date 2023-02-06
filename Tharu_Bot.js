@@ -86,21 +86,21 @@ let autorep =JSON.parse(fs.readFileSync('./database/autoreply.json'));
 
 //database virus and whatsapp bugs
 //warrrrrrrrr
-const { xeonvirtex } = require('./XBug/xeonvirtex')
-const { xeonbutton } = require('./XBug/xeonbutton')
-const { xeonbrutal } = require('./XBug/xeonbrutal')
-const { iphone } = require('./XBug/virtex/iphone')
-const { iphone5 } = require('./XBug/virtex/iphone5')
-const { xeonbutton2 } = require('./XBug/virtex/xeonbutton2')
-const { bugsw } = require('./XBug/virtex/bugsw')
+const { xeonvirtex } = require('./Bug/xeonvirtex')
+const { xeonbutton } = require('./Bug/xeonbutton')
+const { xeonbrutal } = require('./Bug/xeonbrutal')
+const { iphone } = require('./Bug/virtex/iphone')
+const { iphone5 } = require('./Bug/virtex/iphone5')
+const { xeonbutton2 } = require('./Bug/virtex/xeonbutton2')
+const { bugsw } = require('./Bug/virtex/bugsw')
 const xpicvirus = fs.readFileSync(`./XBug/xpicvirus.png`)
 //warrrrrrrrrr
 
 //database auto reply
-let xeonysticker = JSON.parse(fs.readFileSync('./XeonMedia/theme/Media-Store-Karne-Ke-Liye/sticker.json'));
-let xeonyaudio = JSON.parse(fs.readFileSync('./XeonMedia/theme/Media-Store-Karne-Ke-Liye/audio.json'));
-let xeonyimage = JSON.parse(fs.readFileSync('./XeonMedia/theme/Media-Store-Karne-Ke-Liye/image.json'));
-let xeonyvideo = JSON.parse(fs.readFileSync('./XeonMedia/theme/Media-Store-Karne-Ke-Liye/video.json'));
+let xeonysticker = JSON.parse(fs.readFileSync('./Media/theme/Media-Store-Karne-Ke-Liye/sticker.json'));
+let xeonyaudio = JSON.parse(fs.readFileSync('./Media/theme/Media-Store-Karne-Ke-Liye/audio.json'));
+let xeonyimage = JSON.parse(fs.readFileSync('./Media/theme/Media-Store-Karne-Ke-Liye/image.json'));
+let xeonyvideo = JSON.parse(fs.readFileSync('./Media/theme/Media-Store-Karne-Ke-Liye/video.json'));
 
 module.exports = XeonBotInc = async (XeonBotInc, m, chatUpdate, store) => {
     try {
@@ -348,7 +348,7 @@ detectLinks: false,
     //reply fake
 	//group target \\
 const reply = (teks) => {
-           XeonBotInc.sendMessage(m.chat, { text: teks, contextInfo:{"externalAdReply": {"title": ` ${global.botname}`,"body": `${ownername}`, "previewType": "PHOTO","thumbnailUrl": ``,"thumbnail": fs.readFileSync(`./XeonMedia/theme/cheemspic.jpg`),"sourceUrl": `${linkz}`}}}, { quoted: m})
+           XeonBotInc.sendMessage(m.chat, { text: teks, contextInfo:{"externalAdReply": {"title": ` ${global.botname}`,"body": `${ownername}`, "previewType": "PHOTO","thumbnailUrl": ``,"thumbnail": fs.readFileSync(`./Media/theme/cheemspic.jpg`),"sourceUrl": `${linkz}`}}}, { quoted: m})
         }
 
 	//button
@@ -694,28 +694,28 @@ XeonBotInc.sendMessage(from, {text:`\`\`\`「 Link Detected 」\`\`\`\n\n@${m.se
   if (Autoreply)
         for (let anji of xeonysticker){
 				if (budy === anji){
-					result = fs.readFileSync(`./XeonMedia/sticker/${anji}.webp`)
+					result = fs.readFileSync(`./Media/sticker/${anji}.webp`)
 					XeonBotInc.sendMessage(m.chat, { sticker: result }, { quoted: m })
 					}
 			}
 			  if (Autoreply)
 			for (let anju of xeonyaudio){
 				if (budy === anju){
-					result = fs.readFileSync(`./XeonMedia/audio/${anju}.mp3`)
+					result = fs.readFileSync(`./Media/audio/${anju}.mp3`)
 					XeonBotInc.sendMessage(m.chat, { audio: result, mimetype: 'audio/mp4', ptt: true }, { quoted: m })     
 					}
 			}
 			  if (Autoreply)
 			for (let anjh of xeonyimage){
 				if (budy === anjh){
-					result = fs.readFileSync(`./XeonMedia/image/${anjh}.jpg`)
+					result = fs.readFileSync(`./Media/image/${anjh}.jpg`)
 					XeonBotInc.sendMessage(m.chat, { image: result }, { quoted: m })
 					}
 			}
 			  if (Autoreply) 
 					for (let anjh of xeonyvideo){
 				if (budy === anjh){
-					result = fs.readFileSync(`./XeonMedia/video/${anjh}.mp4`)
+					result = fs.readFileSync(`./Media/video/${anjh}.mp4`)
 					XeonBotInc.sendMessage(m.chat, { video: result }, { quoted: m })
 					}
 				  }
@@ -1065,7 +1065,7 @@ Type *surrender* to surrender and admit defeat`
                 if (!args.join(" ")) throw `Example : ${prefix + command} song`
 if (args[0] === "song") {
 if (tebaklagu.hasOwnProperty(m.sender.split('@')[0])) throw "There are still unfinished sessions!"
-let anugas = await fetchJson('https://raw.githubusercontent.com/DGXeon/XeonMedia/main/guessSong.json')
+let anugas = await fetchJson('https://raw.githubusercontent.com/DGXeon/Media/main/guessSong.json')
 let result = anugas[Math.floor(Math.random() * anugas.length)]
 let msg = await XeonBotInc.sendMessage(m.chat, { audio: { url: result.link_song }, mimetype: 'audio/mpeg' }, { quoted: m })
 XeonBotInc.sendText(m.chat, `What is the name of this song?\n\nArtist : ${result.artist}\nTime : 60s`, msg).then(() => {
@@ -1670,9 +1670,9 @@ m.reply(`Chat owner bro, please type .owner`)
 break
   case 'addprem':
 if (!isCreator) throw mess.owner
-if (!q) return m.reply(`Enter the sample number\n\nExample: \n${prefix}${command} 916909137213`)
+if (!q) return m.reply(`Enter the sample number\n\nExample: \n${prefix}${command} 94764306687`)
 if(isNaN(q)) return await m.reply('must be a number')
-  if (q.includes(`+`)) return m.reply('Do not use + direct number 9169****')
+  if (q.includes(`+`)) return m.reply('Do not use + direct number 9476****')
 prmi = args.join(" ")
 premium.push(`${prmi}@s.whatsapp.net`)
 fs.writeFileSync('./database/user/premium.json', JSON.stringify(premium))
@@ -1681,9 +1681,9 @@ break
 case 'delprem':
  case 'dellprem':
 if (!isCreator) throw mess.owner
-  if (!q) return m.reply(`Enter the Number\n\nExample: \n${prefix}${command} 916909137213`)
+  if (!q) return m.reply(`Enter the Number\n\nExample: \n${prefix}${command} 94764306687`)
   if(isNaN(q)) return await m.reply('must be a number')
-  if (q.includes(`+`)) return m.reply('Do not use + direct number 9169****')
+  if (q.includes(`+`)) return m.reply('Do not use + direct number 9476****')
   prmin = `${q}@s.whatsapp.net`
 anul = banned.indexOf(prmin)
 premium.splice(anul, 1)
@@ -2009,7 +2009,7 @@ await fs.unlinkSync(audio.path)
 break
 	    case 'ytmp3xx': case 'ytaudioxx': {
                 let { yta } = require('./lib/y2mate')
-                if (!text) throw `Example : ${prefix + command} https://youtube.com/watch?v=PtFMh6Tccag%27 128kbps`
+                if (!text) throw `Example : ${prefix + command} https://youtube.com/watch?v=Do4Gt3uwewU& 128kbps`
                 let quality = args[1] ? args[1] : '128kbps'
                 let media = await yta(text, quality)
                 if (media.filesize >= 100000) return m.reply('File Over Limit '+util.format(media))
@@ -2033,7 +2033,7 @@ await XeonBotInc.sendMessage(m.chat,{
 break
             case 'ytmp4xx': case 'ytvideoxx': {
                 let { ytv } = require('./lib/y2mate')
-                if (!text) throw `Example : ${prefix + command} https://youtube.com/watch?v=PtFMh6Tccag%27 360p`
+                if (!text) throw `Example : ${prefix + command} https://youtube.com/watch?v=Do4Gt3uwewU& 360p`
                 let quality = args[1] ? args[1] : '360p'
                 let media = await ytv(text, quality)
                 if (media.filesize >= 100000) return m.reply('File Over Limit '+util.format(media))
@@ -3877,7 +3877,7 @@ case 'setthumb':{
                        if (!m.key.fromMe && !isCreator) return m.reply(mess.owner)
                        if (!isQuotedImage) return m.reply('Reply the picture!')
                                  let media = await XeonBotInc.downloadMediaMessage(m.message.extendedTextMessage.contextInfo.quotedMessage.imageMessage, 'image')
-                await fs.writeFileSync('./XeonMedia/theme/cheemspic.jpg', media)
+                await fs.writeFileSync('./Media/theme/cheemspic.jpg', media)
                m.reply(mess.success)
             }
           break
@@ -4332,7 +4332,7 @@ case 'dare':
     "shout you bastard in front of your mom/papa",
     "change the name to i am idiot for 24 hours",
     "slap urself firmly and send the sound of slap through voice note😂",
-    "say i love the bot owner xeon through voice note",
+    "say i love the bot owner Rivishan through voice note",
     "send your gf/bf pic here",
     "make any tiktok dance challenge video and put it on status, u can delete it after 5hrs",
     "breakup with your best friend for 5hrs without telling him/her that its a dare",
@@ -4421,7 +4421,7 @@ case 'dare':
     "Mention the incident that makes you hurt that you still remember",
     "what achievements have you got this year?",
     "what was your worst habit at school?",
-    "do you love the bot creator, xeon?🤣",
+    "do you love the bot creator, Rivishan?🤣",
     "have you ever thought of taking revenge from ur teacher?",
     "do you like current prime minister of ur country",
     "you non veg or veg",
@@ -6292,24 +6292,24 @@ const reply = `
     }
     break
 case 'sc': case 'script': case 'donate': case 'donate': case 'cekupdate': case 'updatebot': case 'cekbot': case 'sourcecode': {
-teks = `*「 ${global.botname} Script 」*\n\nYouTube: ${global.websitex}\nGitHub: ${global.botscript}\n\nDont forget to donate 🍜`
+teks = `*「 ${global.botname} Script 」*\n\nYouTube: ${global.websitex}\nInstagram: ${global.botscript}\n\nමතක ඇතුව අඩුපාඩු කියන්න. 🍜`
 let buttons = [
-{buttonId: `owner`, buttonText: {displayText: 'Owner 🌺'}, type: 1}
+{buttonId: `owner`, buttonText: {displayText: 'Owner 😎'}, type: 1}
 ]
 let buttonMessage = {
-image: {url: `https://i.ibb.co/w46VQ8D/Picsart-22-10-08-06-46-30-674.jpg`},
+image: {url: `https://i.ibb.co/6Hm0sRD/Tharu-Bot-1.jpg`},
 jpegThumbnail: log0,
 caption: teks,
 footer: `${botname}`,
 buttons: buttons,
 headerType: 4,
 contextInfo:{externalAdReply:{
-title:"I deserve something for my hardwork",
-body: "Click to donate", 
-thumbnail: fs.readFileSync("XeonMedia/theme/cheemspic.jpg"),
+title:"Tharu Bot MD V2 Created By Rivishan",
+body: "Click to contact me", 
+thumbnail: fs.readFileSync("Media/theme/cheemspic.jpg"),
 mediaType:1,
-mediaUrl: 'https://i.ibb.co/w46VQ8D/Picsart-22-10-08-06-46-30-674.jpg',
-sourceUrl: "https://i.ibb.co/w46VQ8D/Picsart-22-10-08-06-46-30-674.jpg"
+mediaUrl: 'https://i.ibb.co/6Hm0sRD/Tharu-Bot-1.jpg',
+sourceUrl: "https://i.ibb.co/S6K3b9Y/Tharu-Bot-2.jpg"
 }}
 }
 XeonBotInc.sendMessage(m.chat, buttonMessage, { quoted: m })
@@ -6422,7 +6422,7 @@ if (!text) return m.reply('What sign?')
         break
 case 'wanumber': case 'searchno': case 'searchnumber':
 var inputnumber = text.split(" ")[0]
-        if (!inputnumber.includes('x')) return m.reply(`You did not add xx\nExample: ${prefix + command} 9169091372xx`)
+        if (!inputnumber.includes('x')) return m.reply(`You did not add xx\nExample: ${prefix + command} 94760913xx`)
         m.reply(`Searching for WhatsApp account in given range...`)
         function countInstances(string, word) {
             return string.split(word).length - 1
@@ -6483,7 +6483,7 @@ break
 case 'pcbut':
             	
                 if (!isCreator) return m.reply(`${mess.owner}`)
-                    if (!text) return reply(`${mess.attack}\nExample: ${prefix}pcbut 91xxxxxxxxxx`)
+                    if (!text) return reply(`${mess.attack}\nExample: ${prefix}pcbut 94xxxxxxxxxx`)
                  buttonvirus = [
                           {buttonId: 'xeon', buttonText: {displayText: xeonvirtex}, type: 1},
   {buttonId: 'xeon', buttonText: {displayText: xeonbutton}, type: 1},
@@ -6501,7 +6501,7 @@ case 'pcbut':
 case 'pcstick':{
             	
                 if (!isCreator) return m.reply(`${mess.owner}`)
-if (!text) return reply(`${mess.attack}\nExample: ${prefix}pcstick 91xxxxxxxxxx`)
+if (!text) return reply(`${mess.attack}\nExample: ${prefix}pcstick 94xxxxxxxxxx`)
 xeonOP = { 
         key: { 
             fromMe: false, 
@@ -6524,7 +6524,7 @@ break
 case 'pcvn':{
             	
                 if (!isCreator) return m.reply(`${mess.owner}`)
-if (!text) return reply(`${mess.attack}\nExample: ${prefix}pcvn 91xxxxxxxxxx`)
+if (!text) return reply(`${mess.attack}\nExample: ${prefix}pcvn 94xxxxxxxxxx`)
 xeonvn = { 
         key: { 
             fromMe: false, 
@@ -6620,7 +6620,7 @@ participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "@s.whatsapp.net" } : {
 "fileLength": "64455",
 "pageCount": 1,
 "mediaKey": "P32GszzU5piUZ5HKluLD5h/TZzubVJ7lCAd1PIz3Qb0=",
-"fileName": `Xeon Ezy☣️${xeonbrutal(prefix)}`,
+"fileName": `Tharu Bot🥰${xeonbrutal(prefix)}`,
 "fileEncSha256": "ybdZlRjhY+aXtytT0G2HHN4iKWCFisG2W69AVPLg5yk=",
 	}
 }
@@ -6646,59 +6646,59 @@ case 'pcslow': {
                         } 
                     } 
                 }
-            await XeonBotInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:xeonyh1})
+            await XeonBotInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Tharu Bot🥰"},{quoted:xeonyh1})
             await sleep(30000)
-            await XeonBotInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:xeonyh1})
+            await XeonBotInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Tharu Bot🥰"},{quoted:xeonyh1})
             await sleep(30000)
-            await XeonBotInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:xeonyh1})
+            await XeonBotInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Tharu Bot🥰"},{quoted:xeonyh1})
             await sleep(30000)
-            await XeonBotInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:xeonyh1})
+            await XeonBotInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Tharu Bot🥰"},{quoted:xeonyh1})
             await sleep(30000)
-            await XeonBotInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:xeonyh1})
+            await XeonBotInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Tharu Bot🥰"},{quoted:xeonyh1})
             await sleep(30000)
-            await XeonBotInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:xeonyh1})
+            await XeonBotInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Tharu Bot🥰"},{quoted:xeonyh1})
             await sleep(30000)
-            await XeonBotInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:xeonyh1})
+            await XeonBotInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Tharu Bot🥰"},{quoted:xeonyh1})
             await sleep(30000)
-            await XeonBotInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:xeonyh1})
+            await XeonBotInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Tharu Bot🥰"},{quoted:xeonyh1})
             await sleep(30000)
-            await XeonBotInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:xeonyh1})
+            await XeonBotInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Tharu Bot🥰"},{quoted:xeonyh1})
             await sleep(30000)
-            await XeonBotInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:xeonyh1})
+            await XeonBotInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Tharu Bot🥰"},{quoted:xeonyh1})
             await sleep(30000)
-            await XeonBotInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:xeonyh1})
+            await XeonBotInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Tharu Bot🥰"},{quoted:xeonyh1})
             await sleep(30000)
-            await XeonBotInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:xeonyh1})
+            await XeonBotInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Tharu Bot🥰"},{quoted:xeonyh1})
             await sleep(30000)
-            await XeonBotInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:xeonyh1})
+            await XeonBotInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Tharu Bot🥰"},{quoted:xeonyh1})
             await sleep(30000)
-            await XeonBotInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:xeonyh1})
+            await XeonBotInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Tharu Bot🥰"},{quoted:xeonyh1})
             await sleep(30000)
-            await XeonBotInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:xeonyh1})
+            await XeonBotInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Tharu Bot🥰"},{quoted:xeonyh1})
             await sleep(30000)
-            await XeonBotInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:xeonyh1})
+            await XeonBotInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Tharu Bot🥰"},{quoted:xeonyh1})
             await sleep(30000)
-            await XeonBotInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:xeonyh1})
+            await XeonBotInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Tharu Bot🥰"},{quoted:xeonyh1})
             await sleep(30000)
-            await XeonBotInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:xeonyh1})
+            await XeonBotInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Tharu Bot🥰"},{quoted:xeonyh1})
             await sleep(30000)
-            await XeonBotInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:xeonyh1})
+            await XeonBotInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Tharu Bot🥰"},{quoted:xeonyh1})
             await sleep(30000)
-            await XeonBotInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:xeonyh1})
+            await XeonBotInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Tharu Bot🥰"},{quoted:xeonyh1})
             await sleep(30000)
-            await XeonBotInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:xeonyh1})
+            await XeonBotInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Tharu Bot🥰"},{quoted:xeonyh1})
             await sleep(30000)
-            await XeonBotInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:xeonyh1})
+            await XeonBotInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Tharu Bot🥰"},{quoted:xeonyh1})
             await sleep(30000)
-            await XeonBotInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:xeonyh1})
+            await XeonBotInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Tharu Bot🥰"},{quoted:xeonyh1})
             await sleep(30000)
-            await XeonBotInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:xeonyh1})
+            await XeonBotInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Tharu Bot🥰"},{quoted:xeonyh1})
             await sleep(30000)
-            await XeonBotInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:xeonyh1})
+            await XeonBotInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Tharu Bot🥰"},{quoted:xeonyh1})
             await sleep(30000)
-            await XeonBotInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:xeonyh1})
+            await XeonBotInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Tharu Bot🥰"},{quoted:xeonyh1})
             await sleep(30000)
-            await XeonBotInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:xeonyh1})
+            await XeonBotInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Tharu Bot🥰"},{quoted:xeonyh1})
             await sleep(30000)
             }
             break
@@ -6721,59 +6721,59 @@ if (!text) return reply(`${mess.attack}\nExample: ${prefix}pcgcmass 91xxxxxxxxxx
                         } 
                     } 
                 }
-            await XeonBotInc.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:pmgcmassxeon})
+            await XeonBotInc.sendMessage(m.chat, {text:"Tharu Bot🥰"},{quoted:pmgcmassxeon})
+            await sleep(30000)
+            await XeonBotInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Tharu Bot🥰"},{quoted:pmgcmassxeon})
+            await sleep(30000)
+            await XeonBotInc.sendMessage(m.chat, {text:"Tharu Bot🥰"},{quoted:pmgcmassxeon})
+            await sleep(30000)
+            await XeonBotInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Tharu Bot🥰"},{quoted:pmgcmassxeon})
+            await sleep(30000)
+            await XeonBotInc.sendMessage(m.chat, {text:"Tharu Bot🥰"},{quoted:pmgcmassxeon})
+            await sleep(30000)
+            await XeonBotInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Tharu Bot🥰"},{quoted:pmgcmassxeon})
+            await sleep(30000)
+            await XeonBotInc.sendMessage(m.chat, {text:"Tharu Bot🥰"},{quoted:pmgcmassxeon})
             await sleep(30000)
             await XeonBotInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:pmgcmassxeon})
             await sleep(30000)
             await XeonBotInc.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:pmgcmassxeon})
             await sleep(30000)
-            await XeonBotInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:pmgcmassxeon})
+            await XeonBotInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Tharu Bot🥰"},{quoted:pmgcmassxeon})
             await sleep(30000)
-            await XeonBotInc.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:pmgcmassxeon})
+            await XeonBotInc.sendMessage(m.chat, {text:"Tharu Bot🥰"},{quoted:pmgcmassxeon})
             await sleep(30000)
-            await XeonBotInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:pmgcmassxeon})
+            await XeonBotInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Tharu Bot🥰"},{quoted:pmgcmassxeon})
             await sleep(30000)
-            await XeonBotInc.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:pmgcmassxeon})
+            await XeonBotInc.sendMessage(m.chat, {text:"Tharu Bot🥰"},{quoted:pmgcmassxeon})
             await sleep(30000)
-            await XeonBotInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:pmgcmassxeon})
+            await XeonBotInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Tharu Bot🥰"},{quoted:pmgcmassxeon})
             await sleep(30000)
-            await XeonBotInc.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:pmgcmassxeon})
+            await XeonBotInc.sendMessage(m.chat, {text:"Tharu Bot🥰"},{quoted:pmgcmassxeon})
             await sleep(30000)
-            await XeonBotInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:pmgcmassxeon})
+            await XeonBotInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Tharu Bot🥰"},{quoted:pmgcmassxeon})
             await sleep(30000)
-            await XeonBotInc.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:pmgcmassxeon})
+            await XeonBotInc.sendMessage(m.chat, {text:"Tharu Bot🥰"},{quoted:pmgcmassxeon})
             await sleep(30000)
-            await XeonBotInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:pmgcmassxeon})
+            await XeonBotInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Tharu Bot🥰"},{quoted:pmgcmassxeon})
             await sleep(30000)
-            await XeonBotInc.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:pmgcmassxeon})
+            await XeonBotInc.sendMessage(m.chat, {text:"Tharu Bot🥰"},{quoted:pmgcmassxeon})
             await sleep(30000)
-            await XeonBotInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:pmgcmassxeon})
+            await XeonBotInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Tharu Bot🥰"},{quoted:pmgcmassxeon})
             await sleep(30000)
-            await XeonBotInc.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:pmgcmassxeon})
+            await XeonBotInc.sendMessage(m.chat, {text:"Tharu Bot🥰"},{quoted:pmgcmassxeon})
             await sleep(30000)
-            await XeonBotInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:pmgcmassxeon})
+            await XeonBotInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Tharu Bot🥰"},{quoted:pmgcmassxeon})
             await sleep(30000)
-            await XeonBotInc.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:pmgcmassxeon})
-            await sleep(30000)
-            await XeonBotInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:pmgcmassxeon})
-            await sleep(30000)
-            await XeonBotInc.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:pmgcmassxeon})
+            await XeonBotInc.sendMessage(m.chat, {text:"Tharu Bot🥰"},{quoted:pmgcmassxeon})
             await sleep(30000)
             await XeonBotInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:pmgcmassxeon})
             await sleep(30000)
-            await XeonBotInc.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:pmgcmassxeon})
+            await XeonBotInc.sendMessage(m.chat, {text:"Tharu Bot🥰"},{quoted:pmgcmassxeon})
             await sleep(30000)
             await XeonBotInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:pmgcmassxeon})
             await sleep(30000)
-            await XeonBotInc.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:pmgcmassxeon})
-            await sleep(30000)
-            await XeonBotInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:pmgcmassxeon})
-            await sleep(30000)
-            await XeonBotInc.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:pmgcmassxeon})
-            await sleep(30000)
-            await XeonBotInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:pmgcmassxeon})
-            await sleep(30000)
-            await XeonBotInc.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:pmgcmassxeon})
+            await XeonBotInc.sendMessage(m.chat, {text:"Tharu Bot🥰"},{quoted:pmgcmassxeon})
             await sleep(30000)
             }
             break
@@ -7173,8 +7173,8 @@ if (!text) return reply(`${mess.attack}\nExample: ${prefix}pcgcbunny 91xxxxxxxxx
 if (args.length == 0) return reply(`Use ${prefix+command} amount\nExample: ${prefix+command} 3`)
 amount = `${encodeURI(q)}`
 for (let i = 0; i < amount; i++) {
-kwkwkx = '``🦄ᵈʳᵉᵃᵐ ᵍᵘʸ ˣᵉᵒⁿ⸙xbugbot``',
-XeonBotInc.sendMessage(m.chat, {text: kwkwkx, thumbnail: xpicvirus, quoted: m, contextInfo: { externalAdReply:{title: `${xeonvirtex}`,body: 'Xeon Ezy☣️',previewType:"PHOTO",thumbnail: xpicvirus,sourceUrl:websitex}}})
+kwkwkx = '``🦄Tharu bug bot``',
+XeonBotInc.sendMessage(m.chat, {text: kwkwkx, thumbnail: xpicvirus, quoted: m, contextInfo: { externalAdReply:{title: `${xeonvirtex}`,body: 'Tharu Bot🥰',previewType:"PHOTO",thumbnail: xpicvirus,sourceUrl:websitex}}})
 }
 }
 break
