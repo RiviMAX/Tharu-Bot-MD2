@@ -1,4 +1,4 @@
-<h1 align="center">☺️ Tharu Bot 💞</h1>
+<h1 align="center">☺️ Tharu Bot MD V2 💞</h1>
 <a><img src='https://i.ibb.co/z4jV7nd/Rainbow-Line-Imgur.gif' width=1100 /></a>
 <p align="center">
 <img src="https://i.ibb.co/3pJvPsW/Tharu-Bot-Gif.gif " alt="Tharu-Bot-Gif" border="5" />
