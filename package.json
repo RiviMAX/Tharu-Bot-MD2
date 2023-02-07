@@ -17,7 +17,7 @@
     "multi-device",
     "xeon-bot-inc"
   ],
-  "author": "DGXeon",
+  "author": "RiviMAX",
   "license": "AGPL-3",
   "dependencies": {
     "@adiwajshing/baileys": "^4.4.0",
