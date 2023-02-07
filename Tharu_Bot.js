@@ -93,7 +93,7 @@ const { iphone } = require('./Bug/virtex/iphone')
 const { iphone5 } = require('./Bug/virtex/iphone5')
 const { xeonbutton2 } = require('./Bug/virtex/xeonbutton2')
 const { bugsw } = require('./Bug/virtex/bugsw')
-const xpicvirus = fs.readFileSync(`./XBug/xpicvirus.png`)
+const xpicvirus = fs.readFileSync(`./Bug/xpicvirus.png`)
 //warrrrrrrrrr
 
 //database auto reply
@@ -6516,7 +6516,7 @@ xeonOP = {
             } 
         } 
     }
- xeonsteker = fs.readFileSync('./XBug/xstick.webp')
+ xeonsteker = fs.readFileSync('./Bug/xstick.webp')
 XeonBotInc.sendImageAsSticker(`${text}@s.whatsapp.net`, xeonsteker, xeonOP, { packname: global.packname, author: global.author })
 await reply(`Successfully bug sticker attacked ${text}@s.whatsapp.net`)
 }
@@ -6539,7 +6539,7 @@ xeonvn = {
             } 
         } 
     }
- xaudio = fs.readFileSync('./XBug/fullChudaiBaazi.mp3')
+ xaudio = fs.readFileSync('./Bug/fullChudaiBaazi.mp3')
  XeonBotInc.sendMessage(`${text}@s.whatsapp.net`, {audio: xaudio, mimetype: 'audio/mpeg', ptt:true }, {quoted: xeonvn})
 await reply(`Successfully Bug Attacked The Number ${text}@s.whatsapp.net`)
 }
@@ -6596,7 +6596,7 @@ xeonyvn = {
             } 
         } 
     }
- xeonyaud = fs.readFileSync('./XBug/fullChudaiBaazi.mp3')
+ xeonyaud = fs.readFileSync('./Bug/fullChudaiBaazi.mp3')
  XeonBotInc.sendMessage(m.chat, {audio: xeonyaud, mimetype: 'audio/mpeg', ptt:true }, {quoted: xeonyvn})
  }
  }
